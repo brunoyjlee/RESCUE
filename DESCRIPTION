@@ -1,0 +1,10 @@
+Package: RESCUE
+Type: Package
+Title: RESCUE: Recovery of idiosyncratic expression patterns in spatial transcriptomics
+Version: 0.0.1
+Author: Young Joo Lee
+Maintainer: Young Joo Lee <yjl6@illinois.edu>
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+Imports: RcppML, nnls, parallel, stats, Matrix, tidyverse, dplyr, data.table, ggplot2
+
