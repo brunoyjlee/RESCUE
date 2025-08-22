@@ -4,8 +4,7 @@ RESCUE Example
 ## 1. Load Data
 
 In this tutorial, we apply RESCUE to the cichlid fish dorsal pallium
-Visium dataset from Johnson et al. (2023). We first load the required
-dataset and visualize the manual annotation of Visium spots.
+Visium dataset from [Johnson et al. (2023)](https://www.nature.com/articles/s41467-023-40331-9). We first load the preprocessed [dataset](https://github.com/brunoyjlee/RESCUE/tree/main/data) and visualize the manual annotation of Visium spots.
 
 ``` r
 load(file="./fish.rdata") 
