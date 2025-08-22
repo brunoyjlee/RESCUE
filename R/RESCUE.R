@@ -37,9 +37,6 @@ RESCUE <- function(Y.count, X.count, X.cluster, C.grid=NULL,
                    ncores=NULL, chunk.size=NULL, verbose=FALSE){
   
   # Pre-processing inputs
-  idx.gene <- intersect(rownames(Y.count), rownames(X.count))
-  Y.count <- as.matrix(Y.count[idx.gene,]); X.count <- as.matrix(X.count[idx.gene,])
-  
   idx.ct <- names(which(table(X.cluster) >= CELL_MIN_INSTANCE))
   idx.cell <- which(X.cluster %in% idx.ct)
   X.count <- X.count[,idx.cell]; X.cluster <- factor(as.vector(X.cluster)[idx.cell])

@@ -175,6 +175,7 @@ mod.get_de_genes <- function(cell_type_info, puck, fc_thresh = 0.75, expr_thresh
   bulk_vec = rowSums(puck)
   gene_list = rownames(cell_type_info[[1]])
   prev_num_genes <- min(length(gene_list), length(names(bulk_vec)))
+  gene_list = intersect(gene_list,names(bulk_vec))
   if(length(gene_list) == 0)
     stop("get_de_genes: Error: 0 common genes between SpatialRNA and Reference objects. Please check for gene list nonempty intersection.")
   gene_list = gene_list[bulk_vec[gene_list] >= MIN_OBS]
