@@ -38,8 +38,10 @@ RESCUE <- function(Y.count, X.count, X.cluster, C.grid=NULL,
   
   # Pre-processing inputs
   idx.ct <- names(which(table(X.cluster) >= CELL_MIN_INSTANCE))
-  idx.cell <- which(X.cluster %in% idx.ct)
-  X.count <- X.count[,idx.cell]; X.cluster <- factor(as.vector(X.cluster)[idx.cell])
+  if(length(idx.ct)!=length(levels(X.cluster))){
+    idx.cell <- which(X.cluster %in% idx.ct)
+    X.count <- X.count[,idx.cell]; X.cluster <- factor(as.vector(X.cluster)[idx.cell])  
+  }
   X.cluster <- as.factor(X.cluster); X.nUMI <- colSums(X.count)
   
   # Gene filtering
